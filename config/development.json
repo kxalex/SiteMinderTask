@@ -1,0 +1,11 @@
+{
+  "aws": {
+    "sqs": {
+      "accountId": "854272378934",
+      "queueName": "SiteMinderMailMessagesDev"
+    }
+  },
+  "logger": {
+    "level": "debug"
+  }
+}

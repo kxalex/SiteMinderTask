@@ -1,0 +1,36 @@
+{
+  "sendGridConfig": {
+    "baseUrl": "https://api.sendgrid.com/v3",
+    "apiKey": "SENDGRID_KEY"
+  },
+  "mailGunConfig": {
+    "baseUrl": "https://api.mailgun.net/v3/sandboxf4333328cd19486d9451395b8af1a256.mailgun.org",
+    "apiKey": "MAILGUN_KEY"
+  },
+  "mailer": {
+    "from": "kxalex@gmail.com"
+  },
+  "aws": {
+    "profile": {
+      "name": "default"
+    },
+    "sqs": {
+      "accountId": "YOUR_ACCOUNT_ID",
+      "queueName": "SiteMinderMailMessages",
+      "maxMessages": 1,
+      "visibilityTimeout": 10,
+      "waitTimeSeconds": 20,
+      "pollInterval": 1000,
+      "region": "us-east-1",
+      "queueUrl": "https://sqs.us-east-1.amazonaws.com"
+    }
+  },
+  "logger": {
+    "level": "info",
+    "prettyPrint": true
+  },
+  "connection": {
+    "retries": 3,
+    "interval": 500
+  }
+}
