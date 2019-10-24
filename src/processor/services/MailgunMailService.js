@@ -25,6 +25,9 @@ class MailgunMailService extends IMailService {
     }
   }
 
+  async isLive() {
+    return true; // by default it's live
+  }
 }
 
 module.exports = MailgunMailService;

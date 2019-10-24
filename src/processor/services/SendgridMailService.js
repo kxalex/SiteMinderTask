@@ -27,6 +27,10 @@ class SendgridMailService extends IMailService {
       throw new Error('An error occurred during mail send.');
     }
   }
+
+  async isLive() {
+    return true; // by default it's live
+  }
 }
 
 module.exports = SendgridMailService;

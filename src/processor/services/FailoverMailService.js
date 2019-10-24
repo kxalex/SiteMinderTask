@@ -6,7 +6,6 @@ const logger = require('../../lib/logger').logger;
  * MainGun as slave (backup)
  */
 class FailoverMailService extends IMailService {
-
   constructor({sendgridMailService, mailgunMailService}) {
     logger.debug('Initializing failover mail service');
     super();
@@ -16,6 +15,7 @@ class FailoverMailService extends IMailService {
 
   async send(opts) {
     logger.debug('FailoverMailService.send()');
+    // TODO: rewrite this method using getLiveServices method and go through it
     let result;
     try {
       result = await this.masterMailService.send(opts);
@@ -26,6 +26,10 @@ class FailoverMailService extends IMailService {
       result = await this.slaveMailService.send(opts);
     }
     return result;
+  }
+
+  async isLive() {
+    return true; // by default it's live
   }
 }
 
